@@ -1,0 +1,32 @@
+--------------------------------------------------------------
+usage: python2 sudokusolver.py sudokufile
+	[-h] [-o OUTPUT] [-e ENCODING] [-solve] [-test]
+        [-t TIMEOUT] [--version]
+
+positional arguments:
+  sudokufile            Text file with Sudoku problem definition
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+                        Output file for cnf formula
+  -e ENCODING, --encoding ENCODING
+                        Encoding Method{extended|optimized}
+  -solve                Call SatSolver and pretty print solution (need
+                        glucose_1.0 compiled in ./gucose_1.0)
+  -test                 Make test
+  -t TIMEOUT, --timeout TIMEOUT
+                        Test Timeout in milliseconds (default: nolimit)
+  --version             show program's version number and exit
+
+--------------------------------------------------------------
+Example:
+$ python2 sudokusolver.py sudoku-5x5.pls
+
+- sudoku-5x5.pls is genereted by http://ia.udl.cat/remository/Software/Sudoku-Generator/
+This software implements the algorithms described in: Generating Highly Balanced Sudoku Problems as Hard Problems.
+
+Note: 5x5 is the region size. The total sudoku size will be 25x25.
+
+Generates output.cnf , which contains the CNF formula for the Sat-Solver.
+--------------------------------------------------------------
